@@ -1,12 +1,28 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Documents;
+using GalaSoft.MvvmLight;
 
-namespace Lines
+namespace LinesWithUI.ViewModel
 {
-    class Program
+    /// <summary>
+    /// This class contains properties that the main View can data bind to.
+    /// <para>
+    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
+    /// </para>
+    /// <para>
+    /// You can also use Blend to data bind with the tool's support.
+    /// </para>
+    /// <para>
+    /// See http://www.galasoft.ch/mvvm
+    /// </para>
+    /// </summary>
+    public class MainViewModel : ViewModelBase
     {
-        private static void Main(string[] args)
+        /// <summary>
+        /// Initializes a new instance of the MainViewModel class.
+        /// </summary>
+        public MainViewModel()
         {
             var testLines = new List<Line>();
             int index = 0;
@@ -42,73 +58,39 @@ namespace Lines
             testLines.Add(new Line(133.557957759627, 261.467049730445, index++));
             testLines.Add(new Line(147.670839496517, 71.6411085676797, index++));
             testLines.Add(new Line(65.9730740596389, 301.790618575681, index++));
+            Lines = testLines;
+            Starts = Lines.Select(l => l.Start).ToList();
+            Ends = Lines.Select(l => l.End).ToList();
+        }
 
-
-
-            Console.WriteLine("测试数据:");
-            foreach (var line in testLines) Console.WriteLine(line.ToString());
-            var starts = testLines.Select(l => l.Start).ToArray();
-
-            var max = 0; //最大相交线数量 
-            var resultLines = new List<Line>();
-            for (var i = 0; i < starts.Length; i++)
+        public List<Line> Lines { get; set; }
+        public List<double> Starts { get; set; }
+        public List<double> Ends { get; set; }
+    }
+    public class Line
+    {
+        public Line(double start, double end, int index)
+        {
+            if (start > end)
             {
-                var tmp = new List<Line>();
-                var start = starts[i];
-                var count = 0; //start处垂线相交数量.
-                foreach (var line in testLines)
-                {
-                    if (line.Start <= start && line.End >= start)
-                    {
-                        count++;
-                        tmp.Add(line);
-                    }
-                }
-                if (max < count)//如有等值,忽略,仅获取一例,假设题目要求输出一个条件即可.
-                {
-                    max = count;
-                    Console.WriteLine($"更新max值:直线索引:{i}\t当前垂线位置:{starts[i]}\t与垂线相交的直线数量:{count}");
-                    resultLines = tmp;
-                }
+                Start = end;
+                End = start;
             }
-            Console.WriteLine($"左侧最大相交数量为:{max}");
-            Console.WriteLine($"实例为:");
-            foreach (var line in resultLines)
+            else
             {
-                Console.WriteLine(line);
+                Start = start;
+                End = end;
             }
-           
-            var ends = testLines.Select(l => l.End).ToArray();
-            max = 0; //最大相交线数量 
-            resultLines = new List<Line>();
+            Index = index;
+        }
 
-            for (var i = 0; i < ends.Length; i++)
-            {
-                var tmp = new List<Line>();
-                var end = ends[i];
-                var count = 0; //end处垂线相交数量.
-                foreach (var line in testLines)
-                {
-                    if (line.Start <= end && line.End >= end)
-                    {
-                        count++;
-                        tmp.Add(line);
-                    }
-                }
-                if (max < count)//如有等值,忽略,仅获取一例,假设题目要求输出一个条件即可.
-                {
-                    max = count;
-                    Console.WriteLine($"更新max值:直线索引:{i}\t当前垂线位置:{ends[i]}\t与垂线相交的直线数量:{count}");
-                    resultLines = tmp;
-                }
-            }
-            Console.WriteLine($"右侧最大相交数量为:{max}");
-            Console.WriteLine($"实例为:");
-            foreach (var line in resultLines)
-            {
-                Console.WriteLine(line);
-            }
-            Console.WriteLine("over");
+        public int Index { get; }
+        public double Start { get; }
+        public double End { get; }
+
+        public override string ToString()
+        {
+            return $"��{Index}��ֱ��:{Start.ToString().PadLeft(10, ' ')}\t{End.ToString().PadLeft(10, ' ')}";
         }
     }
 }
