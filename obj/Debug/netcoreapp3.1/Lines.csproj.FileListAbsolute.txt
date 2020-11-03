@@ -1,0 +1,13 @@
+C:\Users\Administrator\source\repos\Lines\bin\Debug\netcoreapp3.1\Lines.exe
+C:\Users\Administrator\source\repos\Lines\bin\Debug\netcoreapp3.1\Lines.deps.json
+C:\Users\Administrator\source\repos\Lines\bin\Debug\netcoreapp3.1\Lines.runtimeconfig.json
+C:\Users\Administrator\source\repos\Lines\bin\Debug\netcoreapp3.1\Lines.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\Lines\bin\Debug\netcoreapp3.1\Lines.dll
+C:\Users\Administrator\source\repos\Lines\bin\Debug\netcoreapp3.1\Lines.pdb
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.dll
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.pdb
+C:\Users\Administrator\source\repos\Lines\obj\Debug\netcoreapp3.1\Lines.genruntimeconfig.cache

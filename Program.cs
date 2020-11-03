@@ -22,6 +22,7 @@ namespace Lines
             Console.WriteLine("测试数据:");
             foreach (var line in testLines) Console.WriteLine(line.ToString());
             var starts = testLines.Select(l => l.Start).ToArray();
+
             var max = 0; //最大相交线数量 
             var resultLines = new List<Line>();
             for (var i = 0; i < starts.Length; i++)
@@ -44,8 +45,37 @@ namespace Lines
                     resultLines = tmp;
                 }
             }
+            Console.WriteLine($"左侧最大相交数量为:{max}");
+            Console.WriteLine($"实例为:");
+            foreach (var line in resultLines)
+            {
+                Console.WriteLine(line);
+            }
+            var ends = testLines.Select(l => l.End).ToArray();
+            max = 0; //最大相交线数量 
+            resultLines = new List<Line>();
 
-            Console.WriteLine($"最大相交数量为:{max}");
+            for (var i = 0; i < ends.Length; i++)
+            {
+                var tmp = new List<Line>();
+                var end = ends[i];
+                var count = 0; //end处垂线相交数量.
+                foreach (var line in testLines)
+                {
+                    if (line.Start <= end && line.End >= end)
+                    {
+                        count++;
+                        tmp.Add(line);
+                    }
+                }
+                if (max < count)//如有等值,忽略,仅获取一例,假设题目要求输出一个条件即可.
+                {
+                    max = count;
+                    Console.WriteLine($"更新max值:直线索引:{i}\t当前垂线位置:{ends[i]}\t与垂线相交的直线数量:{count}");
+                    resultLines = tmp;
+                }
+            }
+            Console.WriteLine($"右侧最大相交数量为:{max}");
             Console.WriteLine($"实例为:");
             foreach (var line in resultLines)
             {
@@ -78,7 +108,7 @@ namespace Lines
 
         public override string ToString()
         {
-            return $"第{Index}条直线:{Start.ToString().PadLeft(10,' ')}\t{End.ToString().PadLeft(10, ' ')}";
+            return $"第{Index}条直线:{Start.ToString().PadLeft(10, ' ')}\t{End.ToString().PadLeft(10, ' ')}";
         }
     }
 }
