@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lines", "Lines.csproj", "{38BC9296-EB37-4D99-8448-FF9EE6989151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lines", "src\LinesConsole\Lines.csproj", "{7364F8CF-5016-43A1-AE58-9740D7B67BCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinesWithUI", "LinesWithUI\LinesWithUI.csproj", "{40AAB26F-B176-4479-A817-7CE67CB1C464}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinesWithUI", "src\LinesWithUI\LinesWithUI.csproj", "{40AAB26F-B176-4479-A817-7CE67CB1C464}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{38BC9296-EB37-4D99-8448-FF9EE6989151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38BC9296-EB37-4D99-8448-FF9EE6989151}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38BC9296-EB37-4D99-8448-FF9EE6989151}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38BC9296-EB37-4D99-8448-FF9EE6989151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7364F8CF-5016-43A1-AE58-9740D7B67BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7364F8CF-5016-43A1-AE58-9740D7B67BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7364F8CF-5016-43A1-AE58-9740D7B67BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7364F8CF-5016-43A1-AE58-9740D7B67BCB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{40AAB26F-B176-4479-A817-7CE67CB1C464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{40AAB26F-B176-4479-A817-7CE67CB1C464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40AAB26F-B176-4479-A817-7CE67CB1C464}.Release|Any CPU.ActiveCfg = Release|Any CPU
