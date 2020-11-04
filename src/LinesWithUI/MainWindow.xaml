@@ -49,6 +49,7 @@
                               X1="{Binding Start}"
                               X2="{Binding End}"
                               Stroke="Green"
+                              ToolTip="{Binding}"
                               Y1="{Binding Index,Converter={StaticResource IndexToVerticialConverter}}"
                               Y2="{Binding Index,Converter={StaticResource IndexToVerticialConverter}}"
                               StrokeThickness="5">
@@ -58,6 +59,7 @@
                               X2="{Binding Start}"
                               Stroke="Red"
                               Y1=" 0"
+                              StrokeDashArray="5,2"
                               Y2="720"
                               Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=CbShowStarts, Mode=OneWay}"
                               StrokeThickness="1">
@@ -66,6 +68,7 @@
                               X1="{Binding End}"
                               X2="{Binding End}"
                               Stroke="Blue"
+
                               Y1=" 0"
                               Y2="720" 
                               StrokeThickness="1"

@@ -58,7 +58,7 @@ namespace LinesWithUI.ViewModel
             testLines.Add(new Line(133.557957759627, 261.467049730445, index++));
             testLines.Add(new Line(147.670839496517, 71.6411085676797, index++));
             testLines.Add(new Line(65.9730740596389, 301.790618575681, index++));
-            Lines = testLines;
+            Lines = testLines.OrderBy(s=>s.Start).ToList();
             Starts = Lines.Select(l => l.Start).ToList();
             Ends = Lines.Select(l => l.End).ToList();
         }
